@@ -3,191 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criativa Lab - Redes Sociais</title>
+    <title>Criativa Lab</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
             background-color: #24004a;
-            color: #FFFFFF;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            overflow: hidden;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-            max-width: 90%;
-            opacity: 0;
-            transform: translateY(-50px);
-            animation: fadeInDown 1s forwards;
-        }
-
-        .header img {
-            width: 100%;
+        img {
+            max-width: 75%;
             height: auto;
-            max-width: 250px;
+            margin-top: -50%;
+            margin-bottom: 0px;
+            border-radius: 10px;
+            animation: float 3s ease-in-out infinite;
         }
 
-        .intro-text {
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        p {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 24px;
-            opacity: 0;
-            transform: translateY(-30px);
-            animation: fadeInUp 1s forwards 0.5s;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
-        .social-icons {
+        .social-buttons {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            justify-content: center;
             align-items: center;
+            width: 100%;
+            max-width: 500px;
         }
 
-        .social-icons a {
+        .social-buttons a {
             text-decoration: none;
-            color: white;
-            font-size: 18px;
-            width: 90%;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 18px 0;
+            width: 80%;
             max-width: 300px;
-            height: 60px;
+            text-align: center;
+            border-radius: 30px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 30px;
-            transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-            background-color: #1a1a1a;
-            gap: 10px;
             position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1s forwards;
+            opacity: 0; /* Começa invisível */
         }
 
-        .social-icons a:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -50%;
-            width: 150%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: skewX(-20deg);
-            transition: left 0.7s ease;
+        .social-buttons a.fade-in {
+            opacity: 1; /* Torna-se visível */
+            transition: opacity 0.5s ease;
         }
 
-        .social-icons a:hover:before {
-            left: 100%;
+        .social-buttons a:hover {
+            opacity: 0.8;
         }
 
-        .social-icons a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        .social-buttons a i {
+            margin-right: 10px;
         }
 
-        .social-icons a.facebook {
+        /* Cores específicas para cada rede social */
+        .facebook {
             background-color: #4267B2;
-            animation-delay: 1s;
         }
 
-        .social-icons a.twitter {
+        .instagram {
+            background-color: #C13584;
+        }
+
+        .twitter {
             background-color: #1DA1F2;
-            animation-delay: 1.2s;
         }
 
-        .social-icons a.instagram {
-            background: radial-gradient(circle at 30% 30%, #f58529, #dd2a7b, #8134af, #515bd4);
-            animation-delay: 1.4s;
-        }
-
-        .social-icons a.linkedin {
+        .linkedin {
             background-color: #0077B5;
-            animation-delay: 1.6s;
         }
 
-        .social-icons a.youtube {
-            background-color: #FF0000;
-            animation-delay: 1.8s;
-        }
-
-        .social-icons a.whatsapp {
+        .whatsapp {
             background-color: #25D366;
-            animation-delay: 2s;
         }
 
-        .social-icons a.pinterest {
-            background-color: #E60023;
-            animation-delay: 2.2s;
+        .tooltip {
+            position: absolute;
+            top: 69%;
+            left: 50%;
+            transform: translateX(-50%) translateY(0);
+            background-color: #fff;
+            color: #000;
+            padding: 5px 10px 3px;
+            border-radius: 1px 1px 10px 10px;
+            font-size: 0.7em;
+            line-height: 1.5;
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
+            white-space: nowrap;
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
-        .social-icons a.tiktok {
-            background-color: #010101;
-            animation-delay: 2.4s;
+        .tooltip.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(10px);
+            z-index: -1;
         }
 
-        .social-icons i {
-            font-size: 25px;
-        }
-
-        .social-icons span {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
+        /* Ajustes de responsividade para telas maiores */
+        @media (min-width: 768px) {
+            .social-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .social-buttons a {
+                margin: 10px;
+                width: auto;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="https://raw.githubusercontent.com/devlodi/Redescriativa_lab/09fb2141fe4bdf2075a48bafae4f0f1bdd120b3e/37815cfa-2eb1-4640-b9b3-eec4e94705f7.jpg" alt="Criativa Lab Logo">
+
+    <img src="https://raw.githubusercontent.com/devlodi/Redescriativa_lab/09fb2141fe4bdf2075a48bafae4f0f1bdd120b3e/37815cfa-2eb1-4640-b9b3-eec4e94705f7.jpg" alt="Criativa Lab Logo">
+
+    <p>Bem-vindo ao Criativa Lab</p>
+
+    <div class="social-buttons">
+        <a href="https://wa.me/123456789" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i>WhatsApp
+            <div class="tooltip">TE ESPERANDO PARA CONVERSAR</div>
+        </a>
+
+        <a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i>Instagram
+            <div class="tooltip">CONFERE NOSSO FEED</div>
+        </a>
+
+        <a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i>Facebook
+            <div class="tooltip">SIM, AINDA TEMOS FACEBOOK</div>
+        </a>
+        
+
+
     </div>
 
-    <div class="intro-text">
-        <p>Conecte-se conosco através de nossas redes sociais:</p>
-    </div>
 
-    <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-        <a href="https://www.twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-        <a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
-        <a href="https://www.linkedin.com" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
-        <a href="https://www.youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i><span>YouTube</span></a>
-        <a href="https://www.whatsapp.com" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
-        <a href="https://www.pinterest.com" target="_blank" class="pinterest"><i class="fab fa-pinterest-p"></i><span>Pinterest</span></a>
-        <a href="https://www.tiktok.com" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
-    </div>
-    
-    <!-- Adicionando Font Awesome para os ícones -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll('.social-buttons a');
+
+            // Exibe todos os botões primeiro
+            buttons.forEach((button, index) => {
+                setTimeout(() => {
+                    button.classList.add('fade-in');
+                }, 800 * (index + 1));
+            });
+
+            // Após todos os botões aparecerem, exibe todos os tooltips juntos
+            setTimeout(() => {
+                buttons.forEach((button) => {
+                    const tooltip = button.querySelector('.tooltip');
+                    tooltip.classList.add('visible');
+                });
+            }, 800 * buttons.length + 1000); // Ajusta o tempo para exibir todos os tooltips juntos após todos os botões
+        });
+    </script>
 </body>
 </html>
