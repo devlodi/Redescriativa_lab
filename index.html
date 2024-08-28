@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criativa Lab - Redes Sociais</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: #24004a;
             color: #FFFFFF;
             display: flex;
@@ -16,11 +18,15 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeInDown 1s forwards;
         }
 
         .header img {
@@ -28,64 +34,102 @@
             height: auto;
         }
 
+        .intro-text {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+
         .social-icons {
             display: flex;
             flex-direction: column;
             gap: 15px;
             justify-content: center;
-            margin-top: 20px;
+            align-items: center;
         }
 
         .social-icons a {
             text-decoration: none;
             color: white;
-            font-size: 20px;
-            width: 200px;
-            height: 50px;
+            font-size: 18px;
+            width: 250px;
+            height: 60px;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            border-radius: 25px;
-            padding-left: 15px;
-            transition: background 0.3s ease, transform 0.3s ease;
+            justify-content: center;
+            border-radius: 30px;
+            transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
             background-color: #1a1a1a;
             gap: 10px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .social-icons a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 150%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: skewX(-20deg);
+            transition: left 0.7s ease;
+        }
+
+        .social-icons a:hover:before {
+            left: 100%;
         }
 
         .social-icons a:hover {
             transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         .social-icons a.facebook {
             background-color: #4267B2;
+            animation-delay: 1s;
         }
 
         .social-icons a.twitter {
             background-color: #1DA1F2;
+            animation-delay: 1.2s;
         }
 
         .social-icons a.instagram {
             background: radial-gradient(circle at 30% 30%, #f58529, #dd2a7b, #8134af, #515bd4);
+            animation-delay: 1.4s;
         }
 
         .social-icons a.linkedin {
             background-color: #0077B5;
+            animation-delay: 1.6s;
         }
 
         .social-icons a.youtube {
             background-color: #FF0000;
+            animation-delay: 1.8s;
         }
 
         .social-icons a.whatsapp {
             background-color: #25D366;
+            animation-delay: 2s;
         }
 
         .social-icons a.pinterest {
             background-color: #E60023;
+            animation-delay: 2.2s;
         }
 
         .social-icons a.tiktok {
             background-color: #010101;
+            animation-delay: 2.4s;
         }
 
         .social-icons i {
@@ -96,11 +140,37 @@
             font-size: 18px;
             font-weight: bold;
         }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <img src="https://raw.githubusercontent.com/devlodi/Redescriativa_lab/09fb2141fe4bdf2075a48bafae4f0f1bdd120b3e/37815cfa-2eb1-4640-b9b3-eec4e94705f7.jpg" alt="Criativa Lab Logo">
+    </div>
+
+    <div class="intro-text">
+        <p>Conecte-se conosco através de nossas redes sociais:</p>
     </div>
 
     <div class="social-icons">
