@@ -9,22 +9,22 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #2D2D2D;
+            background-color: #2B0137; /* Roxo escuro para combinar com a logo */
             color: #FFFFFF;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            text-align: center;
         }
 
         .header {
-            text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .header img {
-            width: 150px;
+            width: 250px;
             height: auto;
         }
 
@@ -32,7 +32,6 @@
             display: flex;
             gap: 20px;
             justify-content: center;
-            margin-top: 20px;
         }
 
         .social-icons a {
@@ -40,51 +39,38 @@
             color: white;
             font-size: 20px;
             display: inline-block;
-            padding: 15px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
+            background-color: #4E0D80; /* Roxo mais claro para os ícones */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .social-icons a:hover {
+            background-color: #6A0FB9; /* Um tom mais claro ao passar o mouse */
             transform: scale(1.1);
         }
 
-        .social-icons a.facebook {
-            background-color: #3b5998;
-        }
-
-        .social-icons a.twitter {
-            background-color: #1da1f2;
-        }
-
-        .social-icons a.instagram {
-            background-color: #e1306c;
-        }
-
-        .social-icons a.linkedin {
-            background-color: #0077b5;
-        }
-
-        .social-icons a.youtube {
-            background-color: #ff0000;
+        .social-icons a svg {
+            width: 24px;
+            height: 24px;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="https://raw.githubusercontent.com/devlodi/Redescriativa_lab/main/37815cfa-2eb1-4640-b9b3-eec4e94705f7.jpg" alt="Criativa Lab Logo">
+        <img src="https://raw.githubusercontent.com/devlodi/Redescriativa_lab/09fb2141fe4bdf2075a48bafae4f0f1bdd120b3e/37815cfa-2eb1-4640-b9b3-eec4e94705f7.jpg" alt="Criativa Lab Logo">
     </div>
 
     <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank" class="facebook">Facebook</a>
-        <a href="https://www.twitter.com" target="_blank" class="twitter">Twitter</a>
-        <a href="https://www.instagram.com" target="_blank" class="instagram">Instagram</a>
-        <a href="https://www.linkedin.com" target="_blank" class="linkedin">LinkedIn</a>
-        <a href="https://www.youtube.com" target="_blank" class="youtube">YouTube</a>
-    </div>
-    
-    <script>
-        // Você pode adicionar animações ou efeitos adicionais aqui usando JavaScript
-    </script>
-</body>
-</html>
+        <a href="https://www.facebook.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2h-3.6a4 4 0 00-4 4v3.6H8.4a.6.6 0 00-.6.6v3.6a.6.6 0 00.6.6h2.4V22h4.8v-7.2h3.6a.6.6 0 00.6-.6v-3.6a.6.6 0 00-.6-.6h-3.6V6a.4.4 0 01.4-.4H18a.6.6 0 00.6-.6V2.6a.6.6 0 00-.6-.6z" />
+            </svg>
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 19c7.732 0 12-6.06 12-12 0-.184 0-.368-.016-.552A8.48 8.48 0 0022 4.86a8.339 8.339 0 01-2.356.646A4.117 4.117 0 0021.448 3a8.191 8.191 0 01-2.608.996A4.115 4.115 0 0016.845 2c-2.285 0-4.137 1.858-4.137 4.144 0 .322.032.636.096.94A11.681 11.681 0 013 3.6a4.144 4.144 0 001.288 5.528 4.072 4.072 0 01-1.872-.518v.052c0 2.006 1.429 3.675 3.312 
