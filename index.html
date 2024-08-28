@@ -30,7 +30,8 @@
 
         .social-icons {
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 15px;
             justify-content: center;
             margin-top: 20px;
         }
@@ -39,18 +40,20 @@
             text-decoration: none;
             color: white;
             font-size: 20px;
-            width: 60px;
-            height: 60px;
+            width: 200px;
+            height: 50px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 50%;
+            justify-content: flex-start;
+            border-radius: 25px;
+            padding-left: 15px;
             transition: background 0.3s ease, transform 0.3s ease;
             background-color: #1a1a1a;
+            gap: 10px;
         }
 
         .social-icons a:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .social-icons a.facebook {
@@ -88,6 +91,11 @@
         .social-icons i {
             font-size: 25px;
         }
+
+        .social-icons span {
+            font-size: 18px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -96,14 +104,14 @@
     </div>
 
     <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.whatsapp.com" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.pinterest.com" target="_blank" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.tiktok.com" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+        <a href="https://www.twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+        <a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+        <a href="https://www.linkedin.com" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+        <a href="https://www.youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+        <a href="https://www.whatsapp.com" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="https://www.pinterest.com" target="_blank" class="pinterest"><i class="fab fa-pinterest-p"></i><span>Pinterest</span></a>
+        <a href="https://www.tiktok.com" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
     </div>
     
     <!-- Adicionando Font Awesome para os ícones -->
