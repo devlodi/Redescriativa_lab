@@ -14,7 +14,7 @@
             color: #fff;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -133,16 +133,20 @@
         }
 
         /* Ajustes de responsividade para telas maiores */
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
             .social-buttons {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-direction: column; /* Mantém a disposição vertical */
+                align-items: center;
+                max-width: 300px; /* Garante que a largura máxima não ultrapasse */
             }
 
-            .social-buttons a {
-                margin: 10px;
-                width: auto;
+            img {
+                max-width: 30%; /* Reduz o tamanho do logo em telas grandes */
+                margin-top: 0;
+            }
+
+            p {
+                font-size: 1.8em; /* Aumenta um pouco o tamanho do texto em telas grandes */
             }
         }
     </style>
@@ -165,9 +169,6 @@
         <a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i>Facebook
             <div class="tooltip">SIM, AINDA TEMOS FACEBOOK</div>
         </a>
-        
-
-
     </div>
 
 
